@@ -235,7 +235,7 @@ section{
     align-items: center;
     width:40px;
     height:40px;
-    background: trnasparent;
+    background: transparent;
     border:.2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 20px;
@@ -274,11 +274,12 @@ section{
     padding-bottom: 6rem;
 }
 
-.heading{
-    position:relative;
-    font-size: 5rem;
-    margin-bottom: 3rem;
-    text-align: center;
+
+
+
+
+h2.sup{
+    margin-top: 5rem;
 }
 
 span{
@@ -431,42 +432,6 @@ span{
     font-size:1.6rem;
 }
 
-.skills{
-    min-height: auto;
-    padding-bottom: 7rem;
-    background: var(--second-bg-color);
-}
-
-.skills h2{
-    display:inline-block;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.skills .skills-row{
-    display: flex;
-    flex-wrap: wrap;
-    gap:5rem;
-}
-
-.skills-row .skills-column{
-    flex: 1 1 40rem;
-   
-}
-
-.skills-column .title{
-    position: relative;
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 0 0 1.5rem;
-    
-}
-
-
-.skills-column .skills-box{
-    position: relative;
-}
-
 .skills-column .soust{
     position: relative;
     text-align: center;
@@ -544,6 +509,193 @@ padding: 0.5rem 99rem;
 }
 
 
+.projects {
+    background: var(--second-bg-color);
+    padding: 10rem;
+    text-align: center;
+}
+
+.heading {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.projects-container {
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.project-card .card-front,
+.project-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.6rem;
+    box-shadow: 1px 3px 5px 1px rgba(49, 2, 90, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+}
+
+.project-card .card-front {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.6rem;
+    box-shadow: 1px 3px 5px 1px rgba(49, 2, 90, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card .card-front img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.project-card .card-front .project-title {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.project-card .card-back {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+    padding: 1rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.project-card:hover .card-back {
+    transform: rotateY(0);
+}
+
+.card-back button {
+    background: var(--main-color);
+    color: #fff;
+    width: 200px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin:20px auto;
+}
+
+.buttonR{
+    display: flex;
+    margin:0 auto;
+    justify-content: center;
+    
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px #0056b3;
+}
+
+.button-press {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px #0056b3;
+  }
+  
+.button-press:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px #0056b3;
+  }
+
+.buttonR:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px #0056b3;
+  }
+
+
+.card-back .github-link {
+    margin-top: 1rem;
+    display: block;
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.card-back p{
+    font-size: 1.2rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #000;
+}
+
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -603,12 +755,6 @@ padding: 0.5rem 99rem;
     height: auto;
     display: inline-block;
 }
-
-
-
-
-
-
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
     width:80%;
@@ -907,44 +1053,35 @@ section:nth-child(odd) .animate.scroll,
     }
 }
 
-@media (max-width:520px){
-    html{
-        font-size:50%;
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
     }
 
-    .home-content h1{
-        display:flex;
+    .home-content h1 {
+        display: flex;
         flex-direction: column;
-    } 
-
-    .home-sci{
-        width:160px;
+        font-size: 5.2rem; /* Ajustement intégré */
     }
 
-    .home-sci a{
-        width:38px;
-        height:38px;
-    }
-}
-
-@media (max-width:462px){
-    .home-content h1{
-        font-size:5.2rem;
+    .home-sci {
+        width: 160px;
     }
 
-    .education{
-        padding: 10rem 4% 5rem 5%;
+    .home-sci a {
+        width: 38px;
+        height: 38px;
     }
 
-    .contact form .input-box .input-field{
-        width:100%;
+    .contact form .input-box .input-field {
+        width: 100%;
     }
 
-    .footer{
+    .footer {
         flex-direction: column-reverse;
     }
 
-    .footer p{
+    .footer p {
         margin-top: 2rem;
     }
 }
@@ -1033,4 +1170,3 @@ section:nth-child(odd) .animate.scroll,
     }
     
 }
-

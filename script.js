@@ -48,43 +48,30 @@ window.onscroll = () => {
 
 }
 
-const video = document.getElementById('bresil');
-
-    video.addEventListener('click', function() {
-      this.controls = true;
+      function playVideo(videoSrc) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      modal.style.display = 'flex'; // Affiche la modal
+      video.src = videoSrc; // Charge la source vidéo
+      video.load(); // Joue la vidéo automatiquement
+    }
+    
+    
+    // Fonction pour fermer la modal
+    function closeVideo() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      modal.style.display = 'none'; // Masque la modal
+      video.pause(); // Met en pause la vidéo
+      video.src = ''; // Réinitialise la source
+    }
+    
+    
+    // Gestion de la fermeture en cliquant à l'extérieur de la modal
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('videoModal');
+      if (e.target === modal) {
+          closeVideo();
+      }
     });
-
-    video.addEventListener('pause', function() {
-      this.controls = false;
-    });
-
-    video.addEventListener('play', function() {
-      setTimeout(() => this.controls = false, 2000);  
-    });
-
-    const video2 = document.getElementById('bresil2');
-
-    video2.addEventListener('click', function() {
-      this.controls = true;
-    });
-
-    video2.addEventListener('pause', function() {
-      this.controls = false;
-    });
-
-    video2.addEventListener('play', function() {
-      setTimeout(() => this.controls = false, 2000);  
-    });
-    const video3 = document.getElementById('commerce');
-
-    video3.addEventListener('click', function() {
-      this.controls = true;
-    });
-
-    video3.addEventListener('pause', function() {
-      this.controls = false;
-    });
-
-    video3.addEventListener('play', function() {
-      setTimeout(() => this.controls = false, 2000);  
-    });
+    
