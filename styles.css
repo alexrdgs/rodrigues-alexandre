@@ -1,5 +1,7 @@
-@import url(./pics/fond.png);
 
+#home{
+    background-image: url(./pics/fond.png);
+}
 *{
     margin:0;
     padding:0;
