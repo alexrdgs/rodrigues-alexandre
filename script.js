@@ -51,23 +51,23 @@ window.onscroll = () => {
       function playVideo(videoSrc) {
       const modal = document.getElementById('videoModal');
       const video = document.getElementById('modalVideo');
-      modal.style.display = 'flex'; // Affiche la modal
-      video.src = videoSrc; // Charge la source vidéo
-      video.load(); // Joue la vidéo automatiquement
+      modal.style.display = 'flex'; 
+      video.src = videoSrc; 
+      video.load(); 
     }
     
     
-    // Fonction pour fermer la modal
+    // fermer la modal
     function closeVideo() {
       const modal = document.getElementById('videoModal');
       const video = document.getElementById('modalVideo');
-      modal.style.display = 'none'; // Masque la modal
-      video.pause(); // Met en pause la vidéo
-      video.src = ''; // Réinitialise la source
+      modal.style.display = 'none'; 
+      video.pause(); 
+      video.src = ''; 
     }
     
     
-    // Gestion de la fermeture en cliquant à l'extérieur de la modal
+  
     window.addEventListener('click', (e) => {
       const modal = document.getElementById('videoModal');
       if (e.target === modal) {
